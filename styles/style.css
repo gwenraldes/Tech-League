@@ -43,3 +43,44 @@ header {
     padding-right: 35px;
     font-size: 20px;
 }
+
+.button-contorno {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 2px ;
+    border-color: white;
+    border-style: solid;
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+.button-contorno:hover {
+    background-color: white;
+    color: rgb(54, 114, 156);
+    transition: 0.2s;
+}
+.button-preenchido {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    color:rgb(54, 114, 156);
+    background-color: white;
+    font-weight: 600;
+}
+.button-preenchido:hover {
+    background-color: transparent;
+    color: white;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    padding: 10px;
+}
+  
+
