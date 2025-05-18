@@ -110,11 +110,11 @@ header {
 
 section.Inicio {
   height: 98vh;
-  background-image: url(../components/images/Fundo\ Site\ 2.jpg);
+  background-image: url(../components/images/Fundo\ Site\ 5.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: #060707;
+  color: #ffffff;
 }
 
 .Inicio .interface {
@@ -145,10 +145,12 @@ section.Inicio {
   font-size: 20px;
   font-weight: 400;
   margin: 20px 0;
+  color: white;
 }
 
 .Inicio .txt-inicio p span {
   display: block;
+  color: white;
 }
 
 /* Estilização da Seção 'Comunidade' */
