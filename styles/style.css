@@ -7,6 +7,11 @@
   font-family: "Cascadia Mono", sans-serif;
 }
 
+body{
+background-color: #E3E3E3;
+
+}
+
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -100,7 +105,7 @@ header {
 .menu nav a:hover::after {
   width: 60px;
 }
-/* Estilização do Inicio */
+/* Estilização da Seção 'Inicio' */
 
 section.Inicio {
   height: 98vh;
@@ -148,3 +153,71 @@ display: block;
 
 }
 
+/* Estilização da Seção 'Comunidade' */
+
+section.Comunidade {
+  padding: 80px 0;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.Comunidade .interface {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.Comunidade .itens-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5%;
+  margin-bottom: 40px;
+}
+
+.Comunidade .itens-container .img-itens img {
+  max-width: 480px;
+  width: 100%;
+}
+
+.Comunidade .itens-container .txt-itens {
+  width: 45%;
+}
+
+.Comunidade .itens-container .img-itens {
+  width: 50%;
+}
+
+.Comunidade .itens-container .txt-itens h3 {
+  font-size: 3em;
+  line-height: 50px;
+  margin-bottom: 15px;
+}
+
+.Comunidade .itens-container .txt-itens p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.itens-container .txt-itens h3 span {
+  font-weight: 300;
+}
+
+.TorcidaPain{
+  width: 230px;
+  border-radius: 15px;
+  box-shadow: 6px 6px 0 #ff0901;  
+}
+
+.TorcidaMundial{
+  width: 230px;
+  border-radius: 15px;
+  box-shadow: 6px 6px 0 #1c2dc0;  
+}
+
+.TorcidaLoud{
+width: 230px;
+  border-radius: 15px;
+  box-shadow: 6px 6px 0 #0bcc4c;  
+
+}
