@@ -16,9 +16,11 @@
 }
 
 header {
-  background-color: black;
   width: 100%;
   padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .logo img {
@@ -37,54 +39,54 @@ header {
   width: 50%;
 }
 
-.menu nav a{
-    color: white;
-    text-decoration: none;
-    padding-right: 35px;
-    font-size: 20px;
-    position: relative;
+.menu nav a {
+  color: white;
+  text-decoration: none;
+  padding-right: 35px;
+  font-size: 20px;
+  position: relative;
 }
 
-.button-contorno {
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 10px;
-    border-width: 2px ;
-    border-color: white;
-    border-style: solid;
-    background-color: transparent;
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
+.button-contorno, .Inicio button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
 }
-.button-contorno:hover {
-    background-color: white;
-    color: rgb(54, 114, 156);
-    transition: 0.2s;
+.button-contorno:hover, .Inicio button:hover {
+  background-color: white;
+  color: rgb(54, 114, 156);
+  transition: 0.2s;
 }
 .button-preenchido {
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    color:rgb(54, 114, 156);
-    background-color: white;
-    font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  color: rgb(54, 114, 156);
+  background-color: white;
+  font-weight: 600;
 }
 .button-preenchido:hover {
-    background-color: transparent;
-    color: white;
-    border-width: 2px;
-    border-color: white;
-    border-style: solid;
-    padding: 10px;
+  background-color: transparent;
+  color: white;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+  padding: 10px;
 }
 
-.menu nav a::after{
+.menu nav a::after {
   content: " ";
   width: 0px;
   height: 4px;
@@ -93,12 +95,56 @@ header {
   top: 30px;
   left: 0;
   transition: width 0.5s;
-
 }
 
-.menu nav a:hover::after{
+.menu nav a:hover::after {
   width: 60px;
 }
+/* Estilização do Inicio */
+
+section.Inicio {
+  height: 98vh;
+  background-image: url(../components/images/Fundo\ Site\ 2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #060707;
+}
+
+.Inicio .interface {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px; 
+}
+
+.Inicio .txt-inicio {
+  width: 100%;
+}
+
+.Inicio .txt-inicio h1 {
+  font-size: 4em;
+  line-height: 65px;
+  font-weight: 400;
+}
+
+.Inicio .txt-inicio h1 span {
+  display: block;
+  font-weight: 1000;
+}
+
+.Inicio .txt-inicio p{
+ font-size: 20px;
+ font-weight: 400;
+ margin: 20px 0;
 
 
+}
+
+.Inicio .txt-inicio p span{
+display: block;
+
+}
 
