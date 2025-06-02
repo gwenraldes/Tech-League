@@ -1,83 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet"  href="./css/stylelogin.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/png" href="./assets/imgs/Logo-Tech-League-Photoroom.png">
-    <script src="./js/sessao.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tech League</title>
-  </head>
-  <body>
-     <header>
-      <div class="containerheader">
-        <div class="logo">
-          <img src="./assets/imgs/Logo-Tech-League-Photoroom.png" />
-        </div>
-        <div class="menu">
-          <nav>
-            <a href="index.html#Inicioref">Inicio</a>
-            <a href="index.html#Comunidaderef">Comunidade</a>
-            <a href="index.html#Campeonatosref">Campeonatos</a>
-            <a href="index.html#Timesref">Times</a>
-          </nav>
-        </div>
-        <div class="buttons">
-          <button
-            id="button-cadastro"
-            class="button-contorno"
-            onclick="window.location.href='cadastro.html'"
-          >
-            Cadastre-se
-          </button>
-          <button
-            id="button-login"
-            class="button-preenchido"
-            onclick="window.location.href='login.html'"
-          >
-            Login
-          </button>
-        </div>
-      </div>
-    </header>
-    <main class="container">
-      <form>
-        <h1>Bem-Vindo</h1>
-        <div class="input-box">
-          <input type="text" placeholder="Seu Nome" id="nome_input"/>
-          <i class="bx bxs-user"></i>
-        </div>
-        <div class="input-box">
-          <input type="email" placeholder="Email" id="email_input" />
-          <i class="bx bxs-user"></i>
-        </div>
-        <div class="input-box">
-          <input type="password" placeholder="Senha" id="senha_input" />
-          <i class="bx bxs-lock-alt"></i>
-        </div>
-        <div class="input-box">
-          <input type="password" placeholder="Repetir Senha" id="confirmacao_senha_input" />
-          <i class="bx bxs-lock-alt"></i>
-        </div>
-        
-        <button type="submit" class="login" onclick="cadastrar()">Cadastrar</button>
 
-        <div class="register-link">
-          <p>Já possui uma conta?<a href="login.html"> Faça login</a></p>
-        </div>
-      </form>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/stylelogin.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" href="./assets/imgs/Logo-Tech-League-Photoroom.png">
+  <script src="./js/sessao.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech League</title>
+</head>
+
+<body>
+  <header>
+    <div class="containerheader">
+      <div class="logo">
+        <img src="./assets/imgs/Logo-Tech-League-Photoroom.png" />
+      </div>
+      <div class="menu">
+        <nav>
+          <a href="index.html#Inicioref">Inicio</a>
+          <a href="index.html#Comunidaderef">Comunidade</a>
+          <a href="index.html#Campeonatosref">Campeonatos</a>
+          <a href="index.html#Timesref">Times</a>
+        </nav>
+      </div>
+      <div class="buttons">
+        <button id="button-cadastro" class="button-contorno" onclick="window.location.href='cadastro.html'">
+          Cadastre-se
+        </button>
+        <button id="button-login" class="button-preenchido" onclick="window.location.href='login.html'">
+          Login
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <form>
+      <h1>Bem-Vindo</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Seu Nome" id="nome_input" />
+        <i class="bx bxs-user"></i>
+      </div>
+      <div class="input-box">
+        <input type="email" placeholder="Email" id="email_input" />
+        <i class="bx bxs-user"></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Senha" id="senha_input" />
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Repetir Senha" id="confirmacao_senha_input" />
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+
+     <div class="login">
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
+
+      <button class="login" onclick="cadastrar()">Cadastrar</button>
+
+      <div class="register-link">
+        <p>Já possui uma conta?<a href="login.html"> Faça login</a></p>
+      </div>
+    </form>
+  </main>
+</body>
+
 </html>
 
 <script>
 
-// Array para armazenar empresas cadastradas para validação de código de ativação 
+  // Array para armazenar empresas cadastradas para validação de código de ativação 
   let listaEmpresasCadastradas = [];
 
   function cadastrar() {
@@ -89,18 +88,19 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    
+  
+    var idEmpresaVincular
+  
 
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-      
-    ) {
+      confirmacaoSenhaVar == "") {
       cardErro.style.display = "block";
-      alert('Por favor preencha todos os campos')
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
 
       finalizarAguardar();
       return false;
@@ -133,6 +133,7 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
+       
         
       }),
     })
@@ -164,7 +165,7 @@
   }
 
   // Listando empresas cadastradas 
-  function listar() {
+function listar() {
     fetch("/empresas/listar", {
       method: "GET",
     })
@@ -182,7 +183,6 @@
         console.log(`#ERRO: ${resposta}`);
       });
   }
-
   function sumirMensagem() {
     cardErro.style.display = "none";
   }

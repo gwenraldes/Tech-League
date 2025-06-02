@@ -16,6 +16,10 @@ scroll-behavior: smooth;
 
 }
 
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
 
 .containerheader {
   max-width: 1280px;
