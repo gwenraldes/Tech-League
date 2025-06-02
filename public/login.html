@@ -79,7 +79,10 @@
   </body>
 </html>
 
+
 <script>
+
+  
 
 
     function entrar() {
@@ -89,14 +92,10 @@
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-           cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha todos os campos";
-            finalizarAguardar();
+           alert('Preencha todos os campos!')
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 50000)
-        }
+       
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -124,7 +123,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "quiz.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
@@ -145,9 +144,6 @@
 
         return false;
     }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+   
 
 </script>
