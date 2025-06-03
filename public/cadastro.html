@@ -74,7 +74,7 @@
           <i class="bx bxs-lock-alt"></i>
         </div>
 
-        <button class="login" onclick="cadastrar()">Cadastrar</button>
+        <button class="login" onclick="cadastrar(event)">Cadastrar</button>
 
         <div class="register-link">
           <p>Já possui uma conta?<a href="login.html"> Faça login</a></p>
@@ -129,11 +129,8 @@
     })
       .then(async function (resposta) {
         console.log("resposta: ", resposta);
+       
 
-        setTimeout(() => {
-          console.log("Aguardando...");
-        }, 5000);
-        
         if (resposta.ok) {
           //Status == 200 'ok'
           alert("Cadastro efetuado");

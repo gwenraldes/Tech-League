@@ -6,15 +6,19 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/stylelogin.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/png" href="./assets/imgs/Logo-Tech-League-Photoroom.png" >
+    <link rel="stylesheet" href="./css/stylelogin.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/imgs/Logo-Tech-League-Photoroom.png"
+    />
     <script src="./js/sessao.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech League</title>
   </head>
   <body>
-     <header>
+    <header>
       <div class="containerheader">
         <div class="logo">
           <img src="./assets/imgs/Logo-Tech-League-Photoroom.png" />
@@ -63,12 +67,6 @@
           </label>
         </div>
 
-   <div id="cardErro"></div>
-      <span id="mensagem_erro"></span>
-      <div id="div_aguardar"></div>
-      <div id="div_erros_login"></div>
-
-
         <button type="submit" class="login" onclick="entrar()">Login</button>
 
         <div class="register-link">
@@ -79,71 +77,58 @@
   </body>
 </html>
 
-
 <script>
+  function entrar() {
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
 
-  
-
-
-    function entrar() {
-        
-
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-
-        if (emailVar == "" || senhaVar == "") {
-           alert('Preencha todos os campos!')
-            return false;
-        }
-       
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
-                    setTimeout(function () {
-                        window.location = "quiz.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
+    if (emailVar == "" || senhaVar == "") {
+      alert("Preencha todos os campos!");
+      return false;
     }
-   
 
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!");
+        console.log(resposta);
+
+        if (resposta.ok) {
+          alert("Login Efetuado");
+          window.location = "quiz.html";
+
+          // resposta.json().then((json) => {
+          //   console.log(json);
+          //   console.log(JSON.stringify(json));
+          //   sessionStorage.EMAIL_USUARIO = json.email;
+          //   sessionStorage.NOME_USUARIO = json.nome;
+          //   sessionStorage.ID_USUARIO = json.id;
+
+          //});
+        } else {
+          console.log("Houve um erro ao tentar realizar o login!");
+alert('Dados Invalidos')
+          // resposta.text().then((texto) => {
+          //   console.error(texto);
+          //   finalizarAguardar(texto);
+          // });
+        }
+      })
+      .catch(function (erro) {
+        console.log(erro);
+      });
+    
+    return false;
+  }
 </script>

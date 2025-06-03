@@ -53,6 +53,7 @@ var usuarioModel = require("../models/usuarioModel");
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    console.log(email,senha)
 
     if (!email) {
         return res.status(400).send("Seu email está undefined!");
@@ -68,7 +69,7 @@ function autenticar(req, res) {
 
             if (resultadoAutenticar.length === 1) {
                 res.json({
-                    idUsuario: resultadoAutenticar[0].idUsuario,
+                    id: resultadoAutenticar[0].id,
                     email: resultadoAutenticar[0].email,
                     nome: resultadoAutenticar[0].nome
                 });
@@ -84,11 +85,10 @@ function autenticar(req, res) {
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
-   
-
+    var nome = req.body.nome;
+    var email = req.body.email;
+    var senha = req.body.senha;
+    
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
