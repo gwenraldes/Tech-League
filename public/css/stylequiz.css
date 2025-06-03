@@ -1,0 +1,266 @@
+/* Não usar pure white or pure black: https://uxplanet.org/basicdesign-never-use-pure-black-in-typography-36138a3327a6 */
+/* The 4-point grid system: https://medium.com/@sainzkike/controlling-spacing-in-design-systems-multiple-spacing-9bf1afec87f */
+
+:root {
+    --primary-brand-color: #ED145B;
+    --secondary-brand-color: #0762C8;
+    --success: #198754;
+    --success-dark: #095c36;
+    --success-light: #9dd3ba;
+    --warning: #ffc107;
+    --warning-dark: #705400;
+    --warning-light: #fdebb3;
+    --danger: #dc3545;
+    --danger-dark: #990c19;
+    --danger-light: #f0c1c6;
+    --new-gray: #CCCCCC;
+    --new-black: #212427;
+    --new-white: #E8E8E8;
+}
+
+body {
+    background-color: #000;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(../assets/imgs/Fundo\ Site\ 5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+button {
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.flex-colunar {
+    display: flex;
+    flex-direction: column;
+}
+
+.width-fit-content {
+    width: fit-content;
+}
+
+.border-primary {
+    border: 3px solid var(--primary-brand-color);
+}
+
+.border-secondary {
+    border: 3px solid var(--secondary-brand-color);
+}
+
+.padding-8 {
+    padding: 8px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-success-with-bg {
+    color: var(--success-dark);
+    background-color: var(--success-light);
+}
+
+.text-warning-with-bg {
+    color: var(--warning-dark);
+    background-color: var(--warning-light);
+}
+
+.text-danger-with-bg {
+    color: var(--danger-dark);
+    background-color: var(--danger-light);
+}
+
+.text-new-gray {
+    color: var(--new-gray);
+}
+
+h1, h2 {
+  color: #c8aa6e;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.quiz-container {
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 2px solid #c8aa6e;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 0 20px rgba(200, 170, 110, 0.6);
+}
+
+.question {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #555;
+  padding-bottom: 1rem;
+}
+
+.answers label {
+  display: block;
+  margin: 0.5rem 0;
+  background-color: #111;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answers label:hover {
+  background-color: #222;
+  border-color: #c8aa6e;
+}
+
+button {
+  background-color: #c89b3c;
+  color: #000;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px #c8aa6e;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0c47c;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+#pontuacaoEJogo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    background: rgba(10, 10, 10, 0.85);
+    padding: 32px;
+    border: 2px solid #c8aa6e;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(200, 170, 110, 0.5);
+    max-width: 1000px;
+    width: 90%;
+    margin: 280px auto 32px auto;
+    font-family: 'Georgia', serif;
+    flex-wrap: wrap; 
+}
+
+#pontuacao,
+#jogo {
+    background-color: rgba(24, 24, 24, 0.95);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+    color: #f0e6d2;
+    box-shadow: 0 0 15px rgba(100, 100, 100, 0.3);
+}
+
+#jogo {
+    flex: 2;
+    min-width: 400px;
+    background-color: rgba(24, 24, 24, 0.95);
+    border: 2px solid #785a28;
+    border-radius: 12px;
+    padding: 24px;
+    color: #f0e6d2;
+    box-shadow: 0 0 15px rgba(100, 100, 100, 0.3);
+}
+
+#pontuacao {
+    flex: 1;
+    min-width: 250px;
+    background-color: rgba(24, 24, 24, 0.95);
+    border: 2px solid #5383e8;
+    border-radius: 12px;
+    padding: 24px;
+    color: #f0e6d2;
+    box-shadow: 0 0 15px rgba(100, 100, 100, 0.3);
+    align-self: center;
+}
+
+#spanQuestaoExibida {
+    font-size: 1.2rem;
+    color: #c8aa6e;
+    text-shadow: 1px 1px 2px black;
+}
+
+#infoAlternativas {
+    font-style: italic;
+    color: #aaa;
+}
+
+#opcoes label {
+    background-color: #1e1e1e;
+    color: #e8e8e8;
+    border: 1px solid #3f3f3f;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 6px 0;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#opcoes label:hover {
+    border-color: #c8aa6e;
+    background-color: #2a2a2a;
+    box-shadow: 0 0 5px rgba(200, 170, 110, 0.5);
+}
+
+#btnIniciarQuiz,
+#btnSubmeter,
+#btnProx,
+#btnTentarNovamente {
+    background-color: #c89b3c;
+    color: #000;
+    font-weight: bold;
+    font-family: 'monospace';
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    margin: 8px auto;
+    display: block;
+    cursor: pointer;
+    box-shadow: 0 0 10px #c8aa6e;
+    transition: background 0.3s ease;
+}
+
+#btnIniciarQuiz:hover,
+#btnSubmeter:hover,
+#btnProx:hover,
+#btnTentarNovamente:hover {
+    background-color: #e0c47c;
+}
+
+#msgFinal {
+    margin-top: 16px;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
