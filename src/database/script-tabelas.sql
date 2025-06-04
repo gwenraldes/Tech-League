@@ -23,6 +23,7 @@ CREATE TABLE resultado_quiz (
     pontuacao INT NOT NULL,
     totalQuestoes INT NOT NULL,
     dataRegistro DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario)
+    FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
+
 

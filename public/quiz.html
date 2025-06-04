@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech League - Quiz</title>
+    <title>Tech League</title>
     <link rel="stylesheet" href="./css/stylequiz.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -16,8 +16,8 @@
         </div>
         <div class="menu">
           <nav>
-            <a href="#Inicioref">Inicio</a>
-            <a href="#Comunidaderef">Comunidade</a>
+            <a href="index.html#Inicioref">Inicio</a>
+            <a href="index.html#Comunidaderef">Comunidade</a>
             <a href="#Campeonatosref">Campeonatos</a>
             <a href="#Timesref">Times</a>
           </nav>
@@ -57,6 +57,7 @@
                 </span>
                 <span id="msgFinal" class="width-fit-content">***</span>
             </div>
+            <div id="imagemElo" class="imagem-elo"></div>
         </div>
 
         <div id="jogo" class="width-fit-content flex-colunar border-secondary">
@@ -353,16 +354,69 @@
         let classComCoresParaMensagemFinal = null
         const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
 
-        if (porcentagemFinalDeAcertos <= 0.3) {
-            textoParaMensagemFinal = "Parece que você não estudou..."
+        let elo = '';
+
+        if (porcentagemFinalDeAcertos < 0.1) {
+            textoParaMensagemFinal = "Que pena seu Rank final é Madeira"
             classComCoresParaMensagemFinal = "text-danger-with-bg"
         }
-        else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
-            textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
+        else if (porcentagemFinalDeAcertos >= 0.1 && porcentagemFinalDeAcertos < 0.2) {
+            elo = 'iron'
+            textoParaMensagemFinal = "Seu Rank final é Ferro"
             classComCoresParaMensagemFinal = "text-warning-with-bg"
         }
-        else if (porcentagemFinalDeAcertos >= 0.9) {
-            textoParaMensagemFinal = "Uau, parabéns!"
+
+        else if (porcentagemFinalDeAcertos >= 0.2 && porcentagemFinalDeAcertos < 0.3) {
+            elo = 'bronze'
+            textoParaMensagemFinal = "Seu Rank final é Bronze"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        }
+
+        else if (porcentagemFinalDeAcertos >= 0.3 && porcentagemFinalDeAcertos < 0.4) {
+            elo = 'silver'
+            textoParaMensagemFinal = "Seu Rank final é Prata"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        }
+
+        else if (porcentagemFinalDeAcertos >= 0.4 && porcentagemFinalDeAcertos < 0.5) {
+            elo = 'gold'
+            textoParaMensagemFinal = "Seu Rank final é Ouro"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        }
+
+        else if (porcentagemFinalDeAcertos >= 0.5 && porcentagemFinalDeAcertos < 0.6) {
+            elo = 'platinum'
+            textoParaMensagemFinal = "Seu Rank final é Platina"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        }
+
+        else if (porcentagemFinalDeAcertos >= 0.6 && porcentagemFinalDeAcertos < 0.7) {
+            elo = 'emerald'
+            textoParaMensagemFinal = "Seu Rank final é Esmeralda"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        }
+
+        else if (porcentagemFinalDeAcertos >= 0.7 && porcentagemFinalDeAcertos < 0.8) {
+            elo = 'diamond'
+            textoParaMensagemFinal = "Seu Rank final é Diamante"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        }
+
+        else if (porcentagemFinalDeAcertos >= 0.8 && porcentagemFinalDeAcertos < 0.9) {
+            elo = 'master'
+            textoParaMensagemFinal = "Seu Rank final é Mestre"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        }
+
+        else if (porcentagemFinalDeAcertos >= 0.9 && porcentagemFinalDeAcertos < 1.0) {
+            elo = 'grandmaster'
+            textoParaMensagemFinal = "Seu Rank final é Grão-Mestre"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        }
+
+        else if (porcentagemFinalDeAcertos >= 1.0) {
+            elo = 'challenger'
+            textoParaMensagemFinal = "Parabéns! Você atingiu o Rank final Desafiante"
             classComCoresParaMensagemFinal = "text-success-with-bg"
         }
 
