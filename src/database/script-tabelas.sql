@@ -16,14 +16,14 @@ CREATE TABLE usuario (
 	email VARCHAR(50) NOT NULL UNIQUE,
 	senha VARCHAR(50) NOT NULL
 	);
+    
+    select * from usuario;
 
 CREATE TABLE resultado_quiz (
-    idResultado INT AUTO_INCREMENT PRIMARY KEY,
-    idUsuario INT,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     pontuacao INT NOT NULL,
     totalQuestoes INT NOT NULL,
-    dataRegistro DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
-);
-
+    rank VARCHAR (45),
+	fkUsuario INT,
+    FOREIGN KEY (fkUsuario) REFERENCES usuario (id));
 
